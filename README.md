@@ -26,7 +26,7 @@ func_iterar(**funcion_name)
 ```
 
 ### Datetime
-### Datetime
+
 
 datetime is a Python module to manipulate date, time etc…
 In Python, the datetime module provides classes for working with dates and times. The datetime class is the most commonly used class in the datetime module, and it represents a date and time object.
@@ -46,9 +46,6 @@ import datetime
 date_string = datetime.datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S.%f')
 print(date_string)
 ```
-
-
-
 
 ## The console
 
