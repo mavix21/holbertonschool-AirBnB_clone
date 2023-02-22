@@ -37,6 +37,6 @@ class BaseModel:
             n_dict["created_at"] = n_dict["created_at"].isoformat()
         if "updated_at" in n_dict:
             n_dict["updated_at"] = n_dict["updated_at"].isoformat()
-        n_dict["class"] = self.class.name
+        n_dict["class"] = self.__class__.__name__
         return n_dict
 
