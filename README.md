@@ -14,6 +14,16 @@ In order to better understand how to use and distribute Python packages, I have 
 Serialization and deserialization are essential concepts when working with data in Python. In this repository, you will find a number of functions that can help you serialize and deserialize data in various formats, including JSON and YAML.
 ### *args and **kwargs
 Python's *args and **kwargs syntax can be a bit confusing at first, but they are incredibly useful for creating flexible functions that can accept any number of arguments or keyword arguments. In this repository, you will find several examples of how to use *args and **kwargs effectively.
+for example:
+
+```python
+def func_iterar(**kwars):
+    for key, value in kwars.items():
+        print("{} = {}".format(key,value))
+
+func_name = {"name1":"john", "name2" :"pablo" , "name3":"pedro"}
+func_iterar(**funcion_name)
+```
 
 ### Datetime
 Python's datetime module is a powerful tool for working with dates and times. In this repository, you will find a number of functions that can help you manipulate and format dates and times, as well as examples of how to use these functions in your own code.
