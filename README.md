@@ -26,7 +26,28 @@ func_iterar(**funcion_name)
 ```
 
 ### Datetime
-Python's datetime module is a powerful tool for working with dates and times. In this repository, you will find a number of functions that can help you manipulate and format dates and times, as well as examples of how to use these functions in your own code.
+### Datetime
+
+datetime is a Python module to manipulate date, time etc…
+In Python, the datetime module provides classes for working with dates and times. The datetime class is the most commonly used class in the datetime module, and it represents a date and time object.
+The datetime class has the following attributes:
+
+- **year:** the year (e.g., 2023)
+- **month:** the month (1-12)
+- **day:** the day of the month (1-31)
+- **hour:** the hour (0-23)
+- ** minute**: the minute (0-59)
+- **second**
+
+for example:
+```python
+date_string = '2023-02-22T12:34:56.789012'
+import datetime
+date_string = datetime.datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S.%f')
+print(date_string)
+```
+
+
 
 
 ## The console
