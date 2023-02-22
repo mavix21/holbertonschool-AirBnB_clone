@@ -4,7 +4,6 @@
 
 import uuid
 from datetime import datetime
-import models
 
 
 class BaseModel:
@@ -18,11 +17,12 @@ class BaseModel:
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
-    def str(self):
+    def __str__(self):
         """String representation of the instances.
         """
-        str = "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
-        return(str)
+        str = "[{}] ({}) {}".format(self.__class__.__name__,
+                                    self.id, self.__dict__)
+        return (str)
 
     def save(self):
         """Updates the public instance attributes.
@@ -32,11 +32,10 @@ class BaseModel:
     def to_dict(self):
         """Returns a dictionary containing all keys/values.
         """
-        n_dict = self.dict.copy()
+        n_dict = self.__dict__.copy()
         if "created_at" in n_dict:
             n_dict["created_at"] = n_dict["created_at"].isoformat()
         if "updated_at" in n_dict:
             n_dict["updated_at"] = n_dict["updated_at"].isoformat()
         n_dict["class"] = self.__class__.__name__
         return n_dict
-
