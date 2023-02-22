@@ -8,7 +8,7 @@ class_path = models.base_model.BaseModel
 
 
 class Test_Base_Model(unittest.TestCase):
-    """Test class for testing base_model module"""
+    """Test class for testing base_model module attributes and methods"""
 
     def test_base_model_doc(self):
         """Testing base_model module documentation"""
