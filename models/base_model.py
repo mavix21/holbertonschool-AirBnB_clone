@@ -20,7 +20,7 @@ class BaseModel:
     def __str__(self):
         """String representation of the instances.
         """
-        str = "[{}] ({}) {}".format(self.__class__.__name__,
+        str = "[{}] ({}) {}".format(type(self).__name__,
                                     self.id, self.__dict__)
         return (str)
 
@@ -38,4 +38,4 @@ class BaseModel:
         if "updated_at" in n_dict:
             n_dict["updated_at"] = n_dict["updated_at"].isoformat()
         n_dict["__class__"] = self.__class__.__name__
-        return n_dict
+        return (n_dict)
