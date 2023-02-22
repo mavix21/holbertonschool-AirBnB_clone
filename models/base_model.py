@@ -21,7 +21,7 @@ class BaseModel:
     def str(self):
         """String representation of the instances.
         """
-        str = "[{}] ({}) {}".format(self.class.name, self.id, self.dict)
+        str = "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
         return(str)
 
     def save(self):
