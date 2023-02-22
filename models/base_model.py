@@ -11,7 +11,7 @@ class BaseModel:
     """Represent support to other classes.
     """
 
-    def init(self, id="", created_at=None, updated_at=None):
+    def init(self, id=None, created_at=None, updated_at=None):
         """Constructor new instances of class.
         """
         self.id = str(uuid.uuid4())
