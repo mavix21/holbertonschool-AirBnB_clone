@@ -10,12 +10,23 @@ class BaseModel:
     """Represent support to other classes.
     """
 
-    def __init__(self, id="", created_at=None, updated_at=None):
+    def __init__(self, *args, **kwargs):
         """Constructor new instances of class.
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs:
+            for key in kwargs:
+                if key != '__class__':
+                    setattr(self, key, kwargs[key])
+                if hasattr(self, "created_at") and type(self.created_at) is str:
+                    self.created_at = datetime.strptime(self.created_at,
+                                       '%Y-%m-%dT%H:%M:%S.%f')
+                if hasattr(self, "updated_at") and type(self.updated_at) is str:
+                    self.updated_at = (datetime.strptime(self.updated_at,
+                                       '%Y-%m-%dT%H:%M:%S.%f')
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """String representation of the instances.
