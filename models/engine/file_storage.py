@@ -40,7 +40,7 @@ class FileStorage():
     def all(self):
         """ Returns the dictionary __objects """
         self.reload()
-        return self.__objects.values()
+        return self.__objects
 
     def new(self, obj):
         """ Sets in __objects the obj with key <obj class name>.id
