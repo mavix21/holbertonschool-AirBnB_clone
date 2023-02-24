@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ created class  HBNBCommand """
 import cmd
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -19,5 +20,17 @@ class HBNBCommand(cmd.Cmd):
         """Do nothing on empty line"""
         print("")
 
+    def do_create(self, line):
+        """Create a new instance of BaseModel"""
+        argument = line.split()
+        if len(argument) == 0:
+            print("** class name missing **")
+        elif argument[0] != "BaseModel":
+            print("** class doesn't exist **")
+        else:
+            instance = BaseModel()
+            instance.save()
+            print(instance.id)
+
 if __name__ == '__main__':
-    HBNBCommand().cmdloop()    
+    HBNBCommand().cmdloop()
