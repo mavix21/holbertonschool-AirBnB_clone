@@ -54,3 +54,30 @@ The initial step involves creating a data model and then utilizing a console or 
 <p align="center">
 <img src="https://camo.githubusercontent.com/5a21d91ad4ed61dcc6478878cd9328593c67ae083bdd9fd065b8052d1d428ffc/68747470733a2f2f692e696d6775722e636f6d2f525536376630362e706e67">
 </p>
+
+## Cmd module
+
+The cmd.Cmd class in Python's standard library is a framework for creating command-line interpreters (CLI) with customizable commands and prompts. Its key features include command registration, command parsing, command aliases, prompt customization, command help messages, default command handling, and special command handling.
+The cmd.Cmd class also provides default command handling and special command handling for commands such as help, quit, and EOF, which can be customized by defining corresponding do_ methods with the same names.
+
+for example:
+
+```python
+import cmd
+
+class MyCmd(cmd.Cmd):
+    """Class for an interactive command interpreter"""
+
+    prompt = '>> '
+
+    def do_hello(self, args):
+        """Greet the user"""
+        print('Hola!')
+
+    def do_exit(self, args):
+        """Exits the command interpreter"""
+        return True
+
+if __name__ == '__main__':
+    MyCmd().cmdloop()
+```
