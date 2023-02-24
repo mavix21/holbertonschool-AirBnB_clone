@@ -50,3 +50,7 @@ print(date_string)
 ## The console
 
 The initial step involves creating a data model and then utilizing a console or command interpreter to manage the objects by creating, updating, destroying them, and performing other necessary actions. The objects will be stored and persisted to a JSON file, with a focus on building a powerful storage system that creates an abstraction layer between the objects and their storage and persistence. This ensures that you don't have to worry about how the objects are stored, either in the console code or in the front-end and RestAPI you will build later. This abstraction layer makes it easy to change the storage type without the need to update your entire codebase. The console will serve as a validation tool for the storage engine.
+
+<p align="center">
+<img src="https://camo.githubusercontent.com/5a21d91ad4ed61dcc6478878cd9328593c67ae083bdd9fd065b8052d1d428ffc/68747470733a2f2f692e696d6775722e636f6d2f525536376630362e706e67">
+</p>
