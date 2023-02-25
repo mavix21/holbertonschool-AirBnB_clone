@@ -3,6 +3,7 @@
 
 import cmd
 from models.base_model import BaseModel
+from models.user import User
 from models.__init__ import storage, classes
 
 
@@ -35,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         elif argument[0] not in classes:
             print("** class doesn't exist **")
         else:
-            instance = BaseModel()
+            instance = classes[argument[0]]()
             instance.save()
             print(instance.id)
 
