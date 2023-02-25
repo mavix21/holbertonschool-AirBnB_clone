@@ -86,8 +86,6 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print(all_storage)
 
-
-<<<<<<< HEAD
     def do_update(self, line):
         """Updates an instance based on the class name and id by adding or
         updating attribute"""
@@ -107,7 +105,5 @@ class HBNBCommand(cmd.Cmd):
         elif len(argument) == 3:
             print("** value missing **")
 
-=======
->>>>>>> aa02a915e6ead57397c3d6d555900fd775c9e6e6
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
