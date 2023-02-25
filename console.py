@@ -48,6 +48,8 @@ class HBNBCommand(cmd.Cmd):
             key = "{}.{}".format(argument[0], argument[1])
             if key in call_storage:
                 print(call_storage[key])
+            else:
+                print("** no instance found **")
 
     def do_destroy(self, line):
         """Deletes an instance based on the class name and id"""
