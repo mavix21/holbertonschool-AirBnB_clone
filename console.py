@@ -8,13 +8,13 @@ from models.__init__ import storage
 class HBNBCommand(cmd.Cmd):
     """ the entry point of the command interpreter """
     prompt = '(hbnb)'
-    
-    def	do_quit(self, line):
-        """ exit program """
+
+    def do_quit(self, line):
+        """ Exit program """
         return True
 
     def do_EOF(self, line):
-        """ exit program """
+        """ Exit program """
         return True
 
     def emptyline(self):
@@ -34,8 +34,11 @@ class HBNBCommand(cmd.Cmd):
             print(instance.id)
 
     def do_show(self, line):
-        """Prints the string representation of an instance based on the class name
-	and id"""
+        """
+        Prints the string representation of an instance based
+        on the class name and id
+        """
+
         argument = line.split()
         call_storage = storage.all()
         if len(argument) == 0:
@@ -53,6 +56,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """Deletes an instance based on the class name and id"""
+
         argument = line.split()
         call_storage = storage.all()
         if len(argument) == 0:
@@ -81,6 +85,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             else:
                 print(all_storage)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
