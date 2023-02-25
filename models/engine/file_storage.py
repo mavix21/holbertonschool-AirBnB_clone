@@ -70,7 +70,7 @@ class FileStorage():
 
         If the JSON file (__file_path) exists, deserializes the JSON
         file to __objects dictionary. Otherwise, does nothing, and no exception
-        should be raised
+        will be raised
 
         """
         if os.path.exists(self.__file_path):
