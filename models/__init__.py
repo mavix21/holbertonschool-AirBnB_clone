@@ -3,8 +3,8 @@
     This module creates a unique FileStorage instance and reloads the objects
 """
 
-from models.engine.file_storage import FileStorage
-from models.base_model import BaseModel
+from .engine.file_storage import FileStorage
+from .base_model import BaseModel
 
 classes = {
     "BaseModel": BaseModel
