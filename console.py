@@ -22,12 +22,12 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """Do nothing on empty line"""
+        """ Do nothing on empty line """
 
         pass
 
     def do_create(self, line):
-        """Create a new instance of BaseModel"""
+        """ Create a new instance of BaseModel """
 
         argument = line.split()
         if len(argument) == 0:
@@ -61,7 +61,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, line):
-        """Deletes an instance based on the class name and id"""
+        """ Deletes an instance based on the class name and id """
 
         argument = line.split()
         call_storage = storage.all()
@@ -80,8 +80,10 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
 
     def do_all(self, line):
-        """Prints all string representation of all instances based or not on
-        the class name."""
+        """
+        Prints all string representation of all instances based or not on
+        the class name
+        """
 
         argument = line.split()
         all_storage = storage.all()
@@ -94,8 +96,11 @@ class HBNBCommand(cmd.Cmd):
                 print(all_storage)
 
     def do_update(self, line):
-        """Updates an instance based on the class name and id by adding or
-        updating attribute"""
+        """
+        Updates an instance based on the class name and id by adding or
+        updating attribute
+        """
+
         argument = line.split()
         all_object = storage.all()
         key = "{}.{}".format(argument[0], argument[1])
@@ -111,6 +116,7 @@ class HBNBCommand(cmd.Cmd):
             print("** attribute name missing **")
         elif len(argument) == 3:
             print("** value missing **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
