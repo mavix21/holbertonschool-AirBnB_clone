@@ -5,7 +5,7 @@
 from . import BaseModel
 
 
-class User(BaseModel)
+class User(BaseModel):
     """ A class representing a user """
     email = ""
     password = ""
