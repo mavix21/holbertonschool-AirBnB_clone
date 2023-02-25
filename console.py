@@ -48,6 +48,25 @@ class HBNBCommand(cmd.Cmd):
             key = "{}.{}".format(argument[0], argument[1])
             if key in call_storage:
                 print(call_storage[key])
-	    
+
+    def do_destroy(self, line):
+        """Deletes an instance based on the class name and id"""
+        argument = line.split()
+        call_storage = storage.all()
+        if len(argument) == 0:
+            print("** class name missing **")
+        elif argument[0] != "BaseModel":
+            print("** class doesn't exist **")
+        elif len(argument) == 1:
+            print("** instance id missing **")
+        else:
+            key = "{}.{}".format(argument[0], argument[1])
+            if key not in call_storage:
+                print("** no instance found **")
+            else:
+                del call_storage[key]
+                storage.save()
+	
+            
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
