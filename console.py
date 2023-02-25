@@ -102,21 +102,30 @@ class HBNBCommand(cmd.Cmd):
         """
 
         argument = line.split()
-        all_object = storage.all()
-        key = "{}.{}".format(argument[0], argument[1])
+        all_objects = storage.all()
         if len(argument) == 0:
             print("** class name missing **")
-        elif argument[0] != "BaseModel":
+            return
+        elif argument[0] not in ["BaseModel"]:
             print("** class doesn't exist **")
+            return
         elif len(argument) == 1:
             print("** instance id missing **")
-        elif key not in all_object:
-            print("** no instance found **")
+            return
         elif len(argument) == 2:
             print("** attribute name missing **")
+            return
         elif len(argument) == 3:
             print("** value missing **")
+            return
 
+        key = "{}.{}".format(argument[0], argument[1])
+        if key not in all_objects:
+            print("** no instance found **")
+            return
+
+        setattr(all_objects[key], argument[2], argument[3])
+        all_objects[key].save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
