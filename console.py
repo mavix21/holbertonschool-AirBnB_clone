@@ -1,28 +1,34 @@
 #!/usr/bin/python3
-""" created class  HBNBCommand """
+""" This module defines the HBNBCommand interpreter """
+
 import cmd
 from models.base_model import BaseModel
-from models.__init__ import storage
+from models import storage, classes
 
 
 class HBNBCommand(cmd.Cmd):
-    """ the entry point of the command interpreter """
-    prompt = '(hbnb)'
+    """ The entry point of the command interpreter """
+    prompt = "(hbnb) "
 
     def do_quit(self, line):
-        """ Exit program """
+        """ Exit the program """
+
         return True
 
     def do_EOF(self, line):
-        """ Exit program """
+        """ Exit the program """
+
+        print()
         return True
 
     def emptyline(self):
         """Do nothing on empty line"""
-        print("")
+
+        pass
 
     def do_create(self, line):
         """Create a new instance of BaseModel"""
+
         argument = line.split()
         if len(argument) == 0:
             print("** class name missing **")
@@ -76,6 +82,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         """Prints all string representation of all instances based or not on
         the class name."""
+
         argument = line.split()
         all_storage = storage.all()
         if len(argument) == 0:
