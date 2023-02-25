@@ -2,6 +2,7 @@
 """ created class  HBNBCommand """
 import cmd
 from models.base_model import BaseModel
+from models.__init__ import storage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -32,5 +33,21 @@ class HBNBCommand(cmd.Cmd):
             instance.save()
             print(instance.id)
 
+    def do_show(self, line):
+        """Prints the string representation of an instance based on the class name
+	and id"""
+        argument = line.split()
+        call_storage = storage.all()
+        if len(argument) == 0:
+            print("** class name missing **")
+        elif argument[0] != "BaseModel":
+            print("** class doesn't exist **")
+        elif len(argument) == 1:
+            print("** instance id missing **")
+        else:
+            key = "{}.{}".format(argument[0], argument[1])
+            if key in call_storage:
+                print(call_storage[key])
+	    
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
