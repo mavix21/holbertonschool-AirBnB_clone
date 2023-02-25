@@ -3,6 +3,7 @@
 
 import json
 import os
+import models
 
 
 class FileStorage():
@@ -38,8 +39,9 @@ class FileStorage():
     __objects = {}
 
     def all(self):
-        """ Returns the dictionary __objects """
-        self.reload()
+        """ Returns a dictionary as follows:
+            key (<class name>.id) : value (obj)
+        """
         return self.__objects
 
     def new(self, obj):
@@ -51,7 +53,7 @@ class FileStorage():
 
         """
         key = f"{obj.__class__.__name__}.{obj.id}"
-        self.__objects[key] = obj.to_dict()
+        self.__objects[key] = obj
 
     def save(self):
         """
@@ -59,8 +61,9 @@ class FileStorage():
         __file_path
 
         """
+        objects_dict = {k: v.to_dict() for k, v in self.__objects.items()}
         with open(self.__file_path, 'w', encoding='utf-8') as file:
-            json.dump(self.__objects, file)
+            json.dump(objects_dict, file, indent=4, sort_keys=True)
 
     def reload(self):
         """ Deserializes the JSON file to __objects
@@ -72,4 +75,7 @@ class FileStorage():
         """
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r', encoding='utf-8') as file:
-                self.__objects = json.load(file)
+                dict_loaded = json.load(file)
+                objects_loaded = {k: models.classes[v["__class__"]](**v)
+                                  for k, v in dict_loaded.items()}
+                self.__objects.update(**objects_loaded)
