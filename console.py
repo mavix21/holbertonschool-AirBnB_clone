@@ -3,7 +3,7 @@
 
 import cmd
 from models.base_model import BaseModel
-from models.__init__ import storage
+from models.__init__ import storage, classes
 
 
 class HBNBCommand(cmd.Cmd):
@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
         argument = line.split()
         if len(argument) == 0:
             print("** class name missing **")
-        elif argument[0] != "BaseModel":
+        elif argument[0] not in classes:
             print("** class doesn't exist **")
         else:
             instance = BaseModel()
@@ -49,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
         call_storage = storage.all()
         if len(argument) == 0:
             print("** class name missing **")
-        elif argument[0] != "BaseModel":
+        elif argument[0] not in classes:
             print("** class doesn't exist **")
         elif len(argument) == 1:
             print("** instance id missing **")
@@ -67,7 +67,7 @@ class HBNBCommand(cmd.Cmd):
         call_storage = storage.all()
         if len(argument) == 0:
             print("** class name missing **")
-        elif argument[0] != "BaseModel":
+        elif argument[0] not in classes:
             print("** class doesn't exist **")
         elif len(argument) == 1:
             print("** instance id missing **")
@@ -90,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
         if len(argument) == 0:
             print(all_storage)
         else:
-            if argument[0] != "BaseModel":
+            if argument[0] not in classes:
                 print("** class doesn't exist **")
             else:
                 print(all_storage)
@@ -106,7 +106,7 @@ class HBNBCommand(cmd.Cmd):
         if len(argument) == 0:
             print("** class name missing **")
             return
-        elif argument[0] not in ["BaseModel"]:
+        elif argument[0] not in classes:
             print("** class doesn't exist **")
             return
         elif len(argument) == 1:
@@ -126,6 +126,7 @@ class HBNBCommand(cmd.Cmd):
 
         setattr(all_objects[key], argument[2], argument[3])
         all_objects[key].save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
