@@ -8,7 +8,9 @@
 
 #### Unittest
 In order to ensure the quality of this code, I have created a suite of unit tests using Python's built-in unittest module. Please feel free to contribute your own test cases or suggest improvements to the existing tests. Let's work together to make this code as reliable as possible!
+
 **for example :**
+
 ```python
 import unittest
 
@@ -46,7 +48,7 @@ In order to better understand how to use and distribute Python packages, I have 
 #### **args and ****kwargs
 Python's  **args and ****kwargs syntax can be a bit confusing at first, but they are incredibly useful for creating flexible functions that can accept any number of arguments or keyword arguments. In this repository, you will find several examples of how to use *args and *** kwargs effectively.
 
-**for example : **
+**for example :**
 
 ```python
 def func_iterar(**kwars):
@@ -59,7 +61,9 @@ func_iterar(**funcion_name)
 
 #### Serialization/Deserialization
 Serialization and deserialization are essential concepts when working with data in Python. In this repository, you will find a number of functions that can help you serialize and deserialize data in various formats, including JSON and YAML.
+
 **for example : **
+
 ```python
 """Serialization"""
 
@@ -78,7 +82,7 @@ def save(self):
 The cmd.Cmd class in Python's standard library is a framework for creating command-line interpreters (CLI) with customizable commands and prompts. Its key features include command registration, command parsing, command aliases, prompt customization, command help messages, default command handling, and special command handling.
 The cmd.Cmd class also provides default command handling and special command handling for commands such as help, quit, and EOF, which can be customized by defining corresponding do_ methods with the same names.
 
-for example:
+**for example :**
 
 ```python
 import cmd
@@ -130,7 +134,7 @@ The initial step involves creating a data model and then utilizing a console or 
 </p>
 
 
-# Autores
+# Autors
 
 -  Miguel Colmenares([@MiguelColmenares](https://github.com/MiguelColmenares94))
 - Marcelo Vizcarra ([@MarceloVizcarra](https://github.com/mavix21))
