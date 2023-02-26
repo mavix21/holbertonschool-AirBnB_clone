@@ -36,7 +36,7 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_id_value(self):
         """Testing id attribute value"""
-        self.assertIs(type(class_path.self.id), str)
+        self.assertIs(type(class_path.id), str)
 
 
 if __name__ == '__main__':
