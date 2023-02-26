@@ -17,6 +17,26 @@ class HBNBCommand(cmd.Cmd):
     intro = "\o/  Welcome to HBNB command line  \o/"
     prompt = "(hbnb) "
 
+    @staticmethod
+    def parse(line):
+        """ Parse the command line into a command name and arguments """
+        args = []
+        quote_mode = False
+        arg_start = 0
+
+        for i, c in enumerate(line):
+            if c == '"':
+                quote_mode = not quote_mode
+            elif not quote_mode and c.isspace():
+                if arg_start < i:
+                    args.append(line[arg_start:i])
+                arg_start = i + 1
+
+        if arg_start < len(line):
+            args.append(line[arg_start:])
+
+        return [arg.strip('"') for arg in args]
+
     def do_quit(self, line):
         """ Exit the program """
 
@@ -36,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         """ Create a new instance of BaseModel """
 
-        argument = line.split()
+        argument = self.parse(line)
         if len(argument) == 0:
             print("** class name missing **")
         elif argument[0] not in classes:
@@ -52,7 +72,7 @@ class HBNBCommand(cmd.Cmd):
         on the class name and id
         """
 
-        argument = line.split()
+        argument = self.parse(line)
         call_storage = storage.all()
         if len(argument) == 0:
             print("** class name missing **")
@@ -70,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, line):
         """ Deletes an instance based on the class name and id """
 
-        argument = line.split()
+        argument = self.parse(line)
         call_storage = storage.all()
         if len(argument) == 0:
             print("** class name missing **")
@@ -92,7 +112,7 @@ class HBNBCommand(cmd.Cmd):
         the class name
         """
 
-        argument = line.split()
+        argument = self.parse(line)
         all_storage = storage.all()
         if len(argument) == 0:
             print(all_storage)
@@ -108,7 +128,7 @@ class HBNBCommand(cmd.Cmd):
         updating attribute
         """
 
-        argument = line.split()
+        argument = self.parse(line)
         all_objects = storage.all()
         if len(argument) == 0:
             print("** class name missing **")
