@@ -14,6 +14,7 @@ from models.__init__ import storage, classes
 
 class HBNBCommand(cmd.Cmd):
     """ The entry point of the command interpreter """
+    intro = "\o/  Welcome to HBNB command line  \o/"
     prompt = "(hbnb) "
 
     def do_quit(self, line):
