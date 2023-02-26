@@ -4,7 +4,7 @@
 import unittest
 import models
 
-class_path = models.base_model.User
+class_path = models.user.User
 
 
 class Test_User(unittest.TestCase):

@@ -4,7 +4,7 @@
 import unittest
 import models
 
-class_path = models.base_model.State
+class_path = models.state.State
 
 
 class Test_State(unittest.TestCase):

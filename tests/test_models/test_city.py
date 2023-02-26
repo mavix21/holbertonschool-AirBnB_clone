@@ -4,7 +4,7 @@
 import unittest
 import models
 
-class_path = models.base_model.City
+class_path = models.city.City
 
 
 class Test_City(unittest.TestCase):

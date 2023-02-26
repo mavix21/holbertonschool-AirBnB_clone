@@ -4,7 +4,7 @@
 import unittest
 import models
 
-class_path = models.base_model.Review
+class_path = models.review.Review
 
 
 class Test_Review(unittest.TestCase):
