@@ -2,7 +2,9 @@
 """Test for base_model module"""
 
 import unittest
-from models.base_model import BaseModel
+import models
+
+class_path = models.base_model.BaseModel
 
 
 class Test_Base_Model(unittest.TestCase):
@@ -14,27 +16,23 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_BaseModel_class_doc(self):
         """Testing BaseModel class documentation"""
-        self.assertIsNotNone(BaseModel.__doc__)
+        self.assertIsNotNone(class_path.__doc__)
 
     def test_save_method_doc(self):
         """Testing save method documentation"""
-        self.assertIsNotNone(BaseModel.save.__doc__)
+        self.assertIsNotNone(class_path.save.__doc__)
 
     def test_to_dict_method_doc(self):
         """Testing to_dict method documentation"""
-        self.assertIsNotNone(BaseModel.to_dict.__doc__)
+        self.assertIsNotNone(class_path.to_dict.__doc__)
 
     def test_to_dict_method(self):
         """Testing to_dict method return type"""
-        self.assertIs(type(self.model.to_dict()), dict)
-
-    def test_init_doc(self)
-        """Testing __init__ method documentation"""
-        self.assertIsNotNone(BaseModel.__init__.__doc__)
+        self.assertIs(type(class_path.to_dict(self), dict)
 
     def test_id_value(self):
         """Testing id attribute value"""
-        self.assertIs(type(self.model.id), str)
+        self.assertIs(type(class_path.id), str)
 
 
 if __name__ == '__main__':

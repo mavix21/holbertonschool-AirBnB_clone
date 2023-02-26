@@ -2,7 +2,7 @@
 """Test for User class"""
 
 import unittest
-from models.user import User
+from models import User
 
 class_path = models.user.User
 
