@@ -21,15 +21,15 @@ class Test_User(unittest.TestCase):
     def test_email_attribute(self):
         """Testing User's email attribute value"""
         self.assertIs(type(class_path.email), str)
-    
+
     def test_password_attribute(self):
         """Testing User's password attribute value"""
         self.assertIs(type(class_path.password), str)
-    
+
     def test_first_name_attribute(self):
         """Testing User's first_name attribute value"""
         self.assertIs(type(class_path.first_name), str)
-    
+
     def test_last_name_attribute(self):
         """Testing User's last_name attribute value"""
         self.assertIs(type(class_path.last_name), str)
