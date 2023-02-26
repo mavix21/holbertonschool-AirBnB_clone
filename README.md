@@ -121,7 +121,7 @@ The initial step involves creating a data model and then utilizing a console or 
 
 #### Data diagram
 <p align="center">
-<img src="https://peytonbrsmith.netlify.app/projects/web/airbnb/99e1a8f2be8c09d5ce5ac321e8cf39f0917f8db5_hu6ccc74028fc11235771a9c9e32891cb9_107677_900x0_resize_q75_box.jpg" alt="texto alternativo" width="400px">
+<img src="https://peytonbrsmith.netlify.app/projects/web/airbnb/99e1a8f2be8c09d5ce5ac321e8cf39f0917f8db5_hu6ccc74028fc11235771a9c9e32891cb9_107677_900x0_resize_q75_box.jpg" alt="texto alternativo" width="700px">
 </p>
 
 
