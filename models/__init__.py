@@ -10,7 +10,12 @@ from .user import User
 
 classes = {
     "BaseModel": BaseModel,
-    "User": User
+    "User": User,
+    "Place": Place,
+    "State": State,
+    "City": City,
+    "Amenity": Amenity,
+    "Review": Review
 }
 
 storage = FileStorage()
