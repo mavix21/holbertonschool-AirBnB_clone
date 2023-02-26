@@ -19,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
 
     @staticmethod
     def parse(line):
-        """ Parse the command line into a command name and arguments """
+        """ Parse the command line into arguments """
         args = []
         quote_mode = False
         arg_start = 0
@@ -36,6 +36,13 @@ class HBNBCommand(cmd.Cmd):
             args.append(line[arg_start:])
 
         return [arg.strip('"') for arg in args]
+
+    @staticmethod
+    def validate_args(args):
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in classes:
+            print("** class doesn't exist **")
 
     def do_quit(self, line):
         """ Exit the program """
