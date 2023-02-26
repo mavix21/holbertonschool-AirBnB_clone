@@ -4,7 +4,7 @@
 import unittest
 import models
 
-class_path = models.base_model.Amenity
+class_path = models.amenity.Amenity
 
 
 class Test_Amenity(unittest.TestCase):
