@@ -28,7 +28,7 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_to_dict_method(self):
         """Testing to_dict method return type"""
-        self.assertIs(type(class_path.to_dict()), dict)
+        self.assertIs(type(class_path.to_dict(self), dict)
 
     def test_init_doc(self):
         """Testing __init__ method documentation"""
