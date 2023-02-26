@@ -47,15 +47,15 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return False
 
-        if len(args) == 1 and number_of_validations >= 3:
+        if number_of_validations >= 3 and len(args) == 1:
             print("** instance id missing **")
             return False
 
-        if len(args) == 2 and number_of_validations >= 4:
+        if number_of_validations >= 4 and len(args) == 1:
             print("** attribute name missing **")
             return False
 
-        if len(args) == 3 and number_of_validations >= 5:
+        if number_of_validations >= 5 and len(args) == 1:
             print("** value missing **")
             return False
 
@@ -151,7 +151,7 @@ class HBNBCommand(cmd.Cmd):
         """
 
         arguments = self.parse(line)
-        if self.validate_args(arguments, 5):
+        if not self.validate_args(arguments, 5):
             return
 
         all_objects = storage.all()
