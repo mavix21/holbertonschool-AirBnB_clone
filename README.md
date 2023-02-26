@@ -124,6 +124,10 @@ The initial step involves creating a data model and then utilizing a console or 
 <img src="https://peytonbrsmith.netlify.app/projects/web/airbnb/99e1a8f2be8c09d5ce5ac321e8cf39f0917f8db5_hu6ccc74028fc11235771a9c9e32891cb9_107677_900x0_resize_q75_box.jpg" alt="texto alternativo" width="700px">
 </p>
 
+<p align="center">
+<a href="https://www.gifsanimados.org/cat-computadora-y-ordenador-56.htm"><img src="https://www.gifsanimados.org/data/media/56/computadora-y-ordenador-imagen-animada-0019.gif" border="0" alt="computadora-y-ordenador-imagen-animada-0019" />
+</a>
+</p>
 
 
 # Autores
@@ -131,8 +135,3 @@ The initial step involves creating a data model and then utilizing a console or 
 -  Miguel Colmenares([@MiguelColmenares](https://github.com/MiguelColmenares94))
 - Marcelo Vizcarra ([@MarceloVizcarra](https://github.com/mavix21))
 - John Espino ([@JohnEspino](https://github.com/johnNaduer))
-
-<p align="center">
-<a href="https://www.gifsanimados.org/cat-computadora-y-ordenador-56.htm"><img src="https://www.gifsanimados.org/data/media/56/computadora-y-ordenador-imagen-animada-0019.gif" border="0" alt="computadora-y-ordenador-imagen-animada-0019" />
-</a>
-</p>
