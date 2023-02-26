@@ -121,8 +121,10 @@ The initial step involves creating a data model and then utilizing a console or 
 
 #### Data diagram
 <p align="center">
-<img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2020/9/99e1a8f2be8c09d5ce5ac321e8cf39f0917f8db5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230226%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230226T033120Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f574c63a1e811234661008af4057295798f9230e52abc7d6f3ce47c7fdc35dbc" alt="texto alternativo" width="400px">
+<img src="https://peytonbrsmith.netlify.app/projects/web/airbnb/99e1a8f2be8c09d5ce5ac321e8cf39f0917f8db5_hu6ccc74028fc11235771a9c9e32891cb9_107677_900x0_resize_q75_box.jpg" alt="texto alternativo" width="400px">
 </p>
+
+
 
 # Autores
 
