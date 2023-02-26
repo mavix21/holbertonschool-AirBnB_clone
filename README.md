@@ -32,10 +32,11 @@ The datetime class has the following attributes:
 - **month:** the month (1-12)
 - **day:** the day of the month (1-31)
 - **hour:** the hour (0-23)
-- ** minute**: the minute (0-59)
+- **minute**: the minute (0-59)
 - **second**
 
-for example:
+**for example:**
+
 ```python
 date_string = '2023-02-22T12:34:56.789012'
 import datetime
@@ -45,10 +46,10 @@ print(date_string)
 #### Python Packages Concept Page
 In order to better understand how to use and distribute Python packages, I have created a concept page that outlines the key concepts and best practices for working with packages in Python. You can find this page in the "docs" folder of this repository.
 
-#### **args and ****kwargs
+#### args and **kwargs
 Python's  **args and ****kwargs syntax can be a bit confusing at first, but they are incredibly useful for creating flexible functions that can accept any number of arguments or keyword arguments. In this repository, you will find several examples of how to use *args and *** kwargs effectively.
 
-**for example :**
+**for example:**
 
 ```python
 def func_iterar(**kwars):
@@ -62,7 +63,7 @@ func_iterar(**funcion_name)
 #### Serialization/Deserialization
 Serialization and deserialization are essential concepts when working with data in Python. In this repository, you will find a number of functions that can help you serialize and deserialize data in various formats, including JSON and YAML.
 
-**for example : **
+**for example :**
 
 ```python
 """Serialization"""
@@ -107,7 +108,7 @@ if __name__ == '__main__':
 
 The initial step involves creating a data model and then utilizing a console or command interpreter to manage the objects by creating, updating, destroying them, and performing other necessary actions. The objects will be stored and persisted to a JSON file, with a focus on building a powerful storage system that creates an abstraction layer between the objects and their storage and persistence. This ensures that you don't have to worry about how the objects are stored, either in the console code or in the front-end and RestAPI you will build later. This abstraction layer makes it easy to change the storage type without the need to update your entire codebase. The console will serve as a validation tool for the storage engine.
 
-*** see the image: ***
+**see the image:**
 <p align="center">
 <img src="https://camo.githubusercontent.com/5a21d91ad4ed61dcc6478878cd9328593c67ae083bdd9fd065b8052d1d428ffc/68747470733a2f2f692e696d6775722e636f6d2f525536376630362e706e67">
 </p>
