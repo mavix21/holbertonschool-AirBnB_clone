@@ -2,6 +2,8 @@
 """ This module defines the HBNBCommand interpreter """
 
 import cmd
+from utils.console_utils import validate_args, parse_args
+from utils.common_utils import get_key
 from models.base_model import BaseModel
 from models.user import User
 from models.place import Place
@@ -14,64 +16,36 @@ from models.__init__ import storage, classes
 
 class HBNBCommand(cmd.Cmd):
     """ The entry point of the command interpreter """
-    intro = "\o/  Welcome to HBNB command line  \o/"
+    intro = "\\o/  Welcome to HBNB command line  \\o/"
     prompt = "(hbnb) "
 
-    @staticmethod
-    def parse(line):
-        """ Parse the command line into argumentss """
-        args = []
-        quote_mode = False
-        arg_start = 0
-
-        for i, c in enumerate(line):
-            if c == '"':
-                quote_mode = not quote_mode
-            elif not quote_mode and c.isspace():
-                if arg_start < i:
-                    args.append(line[arg_start:i])
-                arg_start = i + 1
-
-        if arg_start < len(line):
-            args.append(line[arg_start:])
-
-        return [arg.strip('"') for arg in args]
-
-    @staticmethod
-    def validate_args(args, number_of_validations=2):
-        if len(args) == 0:
-            print("** class name missing **")
-            return False
-
-        if args[0] not in classes:
-            print("** class doesn't exist **")
-            return False
-
-        if number_of_validations >= 3 and len(args) == 1:
-            print("** instance id missing **")
-            return False
-
-        if number_of_validations >= 4 and len(args) == 1:
-            print("** attribute name missing **")
-            return False
-
-        if number_of_validations >= 5 and len(args) == 1:
-            print("** value missing **")
-            return False
-
-        return True
-
-    @staticmethod
-    def get_key(class_name, id):
-        return f"{class_name}.{id}"
+    def precmd(self, line):
+        if all([
+            line,
+            line[0].isupper(),
+            "." in line,
+            "(" in line,
+            ")" in line,
+        ]):
+            parts = line.split(".")
+            arg1 = parts[0]
+            parts = parts[1].split("(")
+            command = parts[0]
+            args = parts[1].strip(")").split(",")
+            new_line = f"{command} {arg1}"
+            for arg in args:
+                new_line += f" {arg.strip()}"
+            return new_line
+        else:
+            return line
 
     def do_quit(self, line):
-        """ Exit the program """
+        """ Exit the program using quit() """
 
         return True
 
     def do_EOF(self, line):
-        """ Exit the program """
+        """ Exit the program using CTRL+D """
 
         print()
         return True
@@ -84,8 +58,8 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         """ Create a new instance of BaseModel """
 
-        arguments = self.parse(line)
-        if not self.validate_args(arguments):
+        arguments = parse_args(line)
+        if not validate_args(arguments):
             return
 
         instance = classes[arguments[0]]()
@@ -98,13 +72,13 @@ class HBNBCommand(cmd.Cmd):
         on the class name and id
         """
 
-        arguments = self.parse(line)
-        if not self.validate_args(arguments, 3):
+        arguments = parse_args(line)
+        if not validate_args(arguments, 3):
             return
 
         all_objects = storage.all()
 
-        key = self.get_key(arguments[0], arguments[1])
+        key = get_key(arguments[0], arguments[1])
         if key in all_objects:
             print(all_objects[key])
         else:
@@ -113,13 +87,13 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, line):
         """ Deletes an instance based on the class name and id """
 
-        arguments = self.parse(line)
+        arguments = parse_args(line)
 
-        if not self.validate_args(arguments, 3):
+        if not validate_args(arguments, 3):
             return
 
         all_objects = storage.all()
-        key = self.get_key(arguments[0], arguments[1])
+        key = get_key(arguments[0], arguments[1])
 
         if key not in all_objects:
             print("** no instance found **")
@@ -133,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
         the class name
         """
 
-        arguments = self.parse(line)
+        arguments = parse_args(line)
         all_objects = storage.all()
 
         if len(arguments) == 0:
@@ -150,13 +124,13 @@ class HBNBCommand(cmd.Cmd):
         updating attribute
         """
 
-        arguments = self.parse(line)
-        if not self.validate_args(arguments, 5):
+        arguments = parse_args(line)
+        if not validate_args(arguments, 5):
             return
 
         all_objects = storage.all()
 
-        key = self.get_key(arguments[0], arguments[1])
+        key = get_key(arguments[0], arguments[1])
         if key not in all_objects:
             print("** no instance found **")
             return
