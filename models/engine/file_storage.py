@@ -2,8 +2,9 @@
 """ This module defines the class FileStorage """
 
 import json
-import os
 import models
+import os
+from utils.common_utils import get_key
 
 
 class FileStorage():
@@ -52,7 +53,7 @@ class FileStorage():
                 object to be stored in __objects dictionary
 
         """
-        key = f"{obj.__class__.__name__}.{obj.id}"
+        key = get_key(obj.__class__.__name__, obj.id)
         self.__objects[key] = obj
 
     def save(self):
