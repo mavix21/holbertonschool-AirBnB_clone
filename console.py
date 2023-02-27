@@ -16,10 +16,13 @@ from models.__init__ import storage, classes
 
 class HBNBCommand(cmd.Cmd):
     """ The entry point of the command interpreter """
+
     intro = "\\o/  Welcome to HBNB command line  \\o/"
     prompt = "(hbnb) "
 
     def precmd(self, line):
+        """ Overrides the default precmd method """
+
         if all([
             line,
             line[0].isupper(),
@@ -40,23 +43,29 @@ class HBNBCommand(cmd.Cmd):
             return line
 
     def do_quit(self, line):
-        """ Exit the program using quit() """
+        """Exit the program using quit()"""
 
         return True
 
     def do_EOF(self, line):
-        """ Exit the program using CTRL+D """
+        """Exit the program using CTRL+D"""
 
         print()
         return True
 
     def emptyline(self):
-        """ Do nothing on empty line """
+        """Do nothing on empty line"""
 
         pass
 
     def do_create(self, line):
-        """ Create a new instance of BaseModel """
+        """
+        Create a new instance of a specific Class
+
+        Usage:
+            - create Class
+            - Class.create()
+        """
 
         arguments = parse_args(line)
         if not validate_args(arguments):
@@ -70,6 +79,10 @@ class HBNBCommand(cmd.Cmd):
         """
         Prints the string representation of an instance based
         on the class name and id
+
+        Usage:
+            - show Class id
+            - Class.show("id")
         """
 
         arguments = parse_args(line)
@@ -85,7 +98,12 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, line):
-        """ Deletes an instance based on the class name and id """
+        """ Deletes an instance based on the class name and id
+
+        Usage:
+            - destroy Class id
+            - Class.destroy("id")
+        """
 
         arguments = parse_args(line)
 
@@ -105,6 +123,11 @@ class HBNBCommand(cmd.Cmd):
         """
         Prints all string representation of all instances based or not on
         the class name
+
+        Usage:
+            - all
+            - all Class
+            - Class.all()
         """
 
         arguments = parse_args(line)
@@ -122,6 +145,10 @@ class HBNBCommand(cmd.Cmd):
         """
         Updates an instance based on the class name and id by adding or
         updating attribute
+
+        Usage:
+            - update Class id attribute value
+            - Class.update("id", "attribute", "value")
         """
 
         arguments = parse_args(line)
@@ -129,7 +156,6 @@ class HBNBCommand(cmd.Cmd):
             return
 
         all_objects = storage.all()
-
         key = get_key(arguments[0], arguments[1])
         if key not in all_objects:
             print("** no instance found **")
@@ -137,6 +163,27 @@ class HBNBCommand(cmd.Cmd):
 
         setattr(all_objects[key], arguments[2], arguments[3])
         all_objects[key].save()
+
+    def do_count(self, line):
+        """
+        Prints the current number of instances of a class
+
+        Usage:
+            - count Class
+            - Class.count()
+        """
+
+        arguments = parse_args(line)
+        if not validate_args(arguments):
+            return
+
+        all_objects = storage.all()
+        number_of_instances = 0
+        for obj in all_objects.values():
+            if type(obj).__name__ == arguments[0]:
+                number_of_instances += 1
+
+        print(number_of_instances)
 
 
 if __name__ == '__main__':
