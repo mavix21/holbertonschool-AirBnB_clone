@@ -2,15 +2,10 @@
 """ This module defines the HBNBCommand interpreter """
 
 import cmd
+import json
+import re
 from utils.console_utils import validate_args, parse_args
 from utils.common_utils import get_key
-from models.base_model import BaseModel
-from models.user import User
-from models.place import Place
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.review import Review
 from models.__init__ import storage, classes
 
 
@@ -38,6 +33,7 @@ class HBNBCommand(cmd.Cmd):
             new_line = f"{command} {arg1}"
             for arg in args:
                 new_line += f" {arg.strip()}"
+
             return new_line
         else:
             return line
@@ -149,10 +145,11 @@ class HBNBCommand(cmd.Cmd):
         Usage:
             - update Class id attribute value
             - Class.update("id", "attribute", "value")
+            - Class.update("id", dictionary)
         """
 
         arguments = parse_args(line)
-        if not validate_args(arguments, 5):
+        if not validate_args(arguments, 3):
             return
 
         all_objects = storage.all()
@@ -161,8 +158,39 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
             return
 
-        setattr(all_objects[key], arguments[2], arguments[3])
-        all_objects[key].save()
+        if re.match(r"(\{.*\})", arguments[2]):
+            try:
+                attr_dict = json.loads(arguments[2])
+            except Exception as e:
+                if "value" in str(e):
+                    print("** value missing **")
+                elif "name" in str(e):
+                    print("** value missing **")
+                else:
+                    print(e)
+                return
+        elif validate_args(arguments, 5):
+            if type(arguments[3]) is str:
+                if arguments[3].isdigit():
+                    arguments[3] = int(arguments[3])
+                else:
+                    try:
+                        arguments[3] = float(arguments[3])
+                    except ValueError:
+                        pass
+
+            attr_dict = {f"{arguments[2]}": arguments[3]}
+        else:
+            return
+
+        for i in attr_dict:
+            if i in ["id", "created_at", "updated_at"]:
+                print(f"Cannot update {key} attribute")
+                return
+
+        obj_to_upd = all_objects[key]
+        obj_to_upd.__dict__.update(**attr_dict)
+        obj_to_upd.save()
 
     def do_count(self, line):
         """
