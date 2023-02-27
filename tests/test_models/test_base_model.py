@@ -49,7 +49,7 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_init_method_(self):
         """Testing str method documentation"""
-        self.assertIs(type(instance.id, str))
+        self.assertIs(type(instance.id), str)
 
 
 if __name__ == '__main__':
