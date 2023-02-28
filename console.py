@@ -17,8 +17,7 @@ class HBNBCommand(cmd.Cmd):
     def precmd(self, line):
         """ Overrides the default precmd method """
 
-        if all([
-            line,
+        if line and all([
             line[0].isupper(),
             "." in line,
             "(" in line,
@@ -33,6 +32,7 @@ class HBNBCommand(cmd.Cmd):
             for arg in args:
                 new_line += f" {arg.strip()}"
 
+            print(new_line)
             return new_line
         else:
             return line
