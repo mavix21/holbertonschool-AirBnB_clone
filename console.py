@@ -19,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
         """ Overrides the default precmd method """
 
         if line and re.match(re_cmd, line):
-            parts = line.split(".")
+            parts = line.split(".", 1)
             arg1 = parts[0]
             parts = parts[1].split("(")
             command = parts[0]
