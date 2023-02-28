@@ -6,6 +6,7 @@ import json
 import re
 from utils.console_utils import validate_args, parse_args
 from utils.common_utils import get_key
+from utils.constants import re_cmd, re_inside_parenthesis
 from models.__init__ import storage, classes
 
 
@@ -17,22 +18,27 @@ class HBNBCommand(cmd.Cmd):
     def precmd(self, line):
         """ Overrides the default precmd method """
 
-        if line and all([
-            line[0].isupper(),
-            "." in line,
-            "(" in line,
-            ")" in line,
-        ]):
+        if line and re.match(re_cmd, line):
             parts = line.split(".")
             arg1 = parts[0]
             parts = parts[1].split("(")
             command = parts[0]
-            args = parts[1].strip(")").split(",")
             new_line = f"{command} {arg1}"
-            for arg in args:
-                new_line += f" {arg.strip()}"
+            args = re.findall(re_inside_parenthesis, f"({parts[1]}")
+            if len(args) == 0:
+                return (new_line)
 
-            print(new_line)
+            try:
+                args_list = json.loads(f"[{args[0]}]")
+            except Exception as e:
+                print(str(e))
+                return ""
+
+            for arg in args_list:
+                if type(arg) is dict:
+                    new_line += f" {json.dumps(arg)}"
+                else:
+                    new_line += f" \"{arg}\""
             return new_line
         else:
             return line
