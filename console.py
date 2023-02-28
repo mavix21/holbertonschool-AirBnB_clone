@@ -163,7 +163,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
             return
 
-        if re.match(r"(\{.*\})", arguments[2]):
+        if len(arguments) >= 3 and re.match(r"(\{.*\})", arguments[2]):
             try:
                 attr_dict = json.loads(arguments[2])
             except Exception as e:
