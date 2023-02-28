@@ -25,7 +25,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test__objects(self):
         """Test for class private attribute __objects."""
-        self.assertIs(type(instance._FileStorage__objects), list)
+        self.assertIs(type(instance._FileStorage__objects), dict)
 
     def test_all_method(self):
         """Test for all method"""
