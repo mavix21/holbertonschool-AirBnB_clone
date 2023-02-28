@@ -21,7 +21,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test__file_path(self):
         """Test for class private attribute __file_path."""
-        self.assertIsNotNone(instance._FileStorage__objects))
+        self.assertIsNotNone(instance._FileStorage__objects)
 
     def test__objects(self):
         """Test for class private attribute __objects."""
