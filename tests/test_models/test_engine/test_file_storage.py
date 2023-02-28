@@ -32,15 +32,15 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsNotNone(instance.all.__doc__)
         self.assertIs(type(instance.all()), dict)
 
-    def test_new_method(self)
+    def test_new_method(self):
         """Test for new method"""
         self.assertIsNotNone(instance.new.__doc__)
 
-    def test_save_method(self)
+    def test_save_method(self):
         """Test for save method"""
         self.assertIsNotNone(instance.save.__doc__)
 
-    def test_reload_method(self)
+    def test_reload_method(self):
         """Test for reload method"""
         self.assertIsNotNone(instance.reload.__doc__)
     
