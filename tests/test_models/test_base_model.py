@@ -41,7 +41,7 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_str_method_(self):
         """Testing str method documentation"""
-        self.assertIs(type(instance.__str__), str)
+        self.assertIs(type(instance.__str__()), str)
 
     def test_init_method_doc(self):
         """Testing str method documentation"""
