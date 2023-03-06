@@ -52,6 +52,7 @@ def parse_args(line):
 
 
 def validate_args(args, number_of_validations=2):
+    """ Validate arguments passed to the available commands on the console """
     if len(args) == 0:
         print("** class name missing **")
         return False
