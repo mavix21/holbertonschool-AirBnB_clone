@@ -26,22 +26,22 @@ class HBNBCommand(cmd.Cmd):
             new_line = f"{command} {arg1}"
             args = re.findall(re_inside_parenthesis, f"({parts[1]}")
             if len(args) == 0:
-                return (new_line)
+                return new_line
 
             try:
                 args_list = json.loads(f"[{args[0]}]")
-            except Exception as e:
-                print(str(e))
+            except Exception as ex:
+                print(str(ex))
                 return ""
 
             for arg in args_list:
-                if type(arg) is dict:
+                if isinstance(arg, dict):
                     new_line += f" {json.dumps(arg)}"
                 else:
                     new_line += f" \"{arg}\""
             return new_line
-        else:
-            return line
+
+        return line
 
     def do_quit(self, line):
         """Exit the program using quit()"""
@@ -166,16 +166,16 @@ class HBNBCommand(cmd.Cmd):
         if len(arguments) >= 3 and re.match(r"(\{.*\})", arguments[2]):
             try:
                 attr_dict = json.loads(arguments[2])
-            except Exception as e:
-                if "value" in str(e):
+            except Exception as ex:
+                if "value" in str(ex):
                     print("** value missing **")
-                elif "name" in str(e):
+                elif "name" in str(ex):
                     print("** value missing **")
                 else:
-                    print(e)
+                    print(ex)
                 return
         elif validate_args(arguments, 5):
-            if type(arguments[3]) is str:
+            if isinstance(arguments[3], str):
                 if arguments[3].isdigit():
                     arguments[3] = int(arguments[3])
                 else:
