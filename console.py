@@ -25,15 +25,14 @@ class HBNBCommand(cmd.Cmd):
             command = parts[0]
             new_line = f"{command} {arg1}"
             args = re.findall(re_inside_parenthesis, f"({parts[1]}")
+            new_args = args[0].replace("'", '"')
             if len(args) == 0:
                 return new_line
-
             try:
-                args_list = json.loads(f"[{args[0]}]")
+                args_list = json.loads(f"[{new_args}]")
             except Exception as ex:
                 print(str(ex))
                 return ""
-
             for arg in args_list:
                 if isinstance(arg, dict):
                     new_line += f" {json.dumps(arg)}"
