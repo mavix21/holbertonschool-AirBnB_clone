@@ -1,0 +1,48 @@
+.filters {
+	height: 70px;
+	margin: 0 12px;
+	padding: 0 30px;
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+.filters button {
+	width: 20%;
+	min-width: 98px;
+	height: 48px;
+	color: #FFF;
+	background-color: #FF5A5F;
+	font-size: 1.8rem;
+	display: inline-block;
+	border-radius: 4px;
+	margin-left: auto;
+	text-align: center;
+}
+
+.filters button:hover {
+	opacity: 90%;
+}
+
+.filters > div {
+	height: 100%;
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.locations {
+	border-right: 1px solid #DDD;
+}
+
+.filters h3 {
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.filters h2 {
+	font-weight: 400;
+}
