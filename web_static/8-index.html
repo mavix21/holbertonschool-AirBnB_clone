@@ -1,193 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>AirBnb Clone</title>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-	<link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
-    <link rel="stylesheet" href="./styles/4-common.css" />
-    <link rel="stylesheet" href="./styles/3-header.css" />
-	<link rel="stylesheet" href="./styles/3-footer.css">
-	<link rel="stylesheet" href="./styles/6-filters.css">
-	<link rel="stylesheet" href="./styles/8-places.css">
-  </head>
-  <body>
-    <header>
-		<div class="logo"></div>
-	</header>
-	<main class="container">
-		<section class="filters">
-			<div class="locations">
-				<div class="filters-tab">
-					<h3>States</h3>
-					<h4>California, New York...</h4>
+	<head>
+		<title>AirBnb Clone</title>
+		<meta charset="UTF-8" />
+		<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
+		<link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+		<link rel="stylesheet" href="./styles/4-common.css" />
+		<link rel="stylesheet" href="./styles/3-header.css" />
+		<link rel="stylesheet" href="./styles/3-footer.css">
+		<link rel="stylesheet" href="./styles/6-filters.css">
+		<link rel="stylesheet" href="./styles/8-places.css">
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+			</div>
+		</header>
+		<main class="container">
+			<section class="filters">
+				<div class="locations">
+					<div class="filters-tab">
+						<h3>States</h3>
+						<h4>California, New York...</h4>
+					</div>
+					<ul class="popover locations-list">
+						<li class="list_item-states">
+							<h2 class="popover-heading">California</h2>
+							<ul>
+								<li>lorem</li>
+								<li>ipsum</li>
+							</ul>
+						</li>
+						<li class="list_item-states">
+							<h2 class="popover-heading">Arizona</h2>
+							<ul>
+								<li>lorem ipsum</li>
+								<li>ipsum dolor</li>
+							</ul>
+						</li>
+					</ul>
 				</div>
-				<ul class="popover locations-list">
-					<li class="list_item-states">
-						<h2 class="popover-heading">California</h2>
-						<ul>
-							<li>lorem</li>
-							<li>ipsum</li>
-						</ul>
-					</li>
-					<li class="list_item-states">
-						<h2 class="popover-heading">Arizona</h2>
-						<ul>
-							<li>lorem ipsum</li>
-							<li>ipsum dolor</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-			<div class="amenities">
-				<div class="filters-tab">
-					<h3>Amenities</h3>
-					<h4>Internet, Kitchen...</h4>
+				<div class="amenities">
+					<div class="filters-tab">
+						<h3>Amenities</h3>
+						<h4>Internet, Kitchen...</h4>
+					</div>
+					<ul class="popover amenities-list">
+						<li>Internet</li>
+						<li>TV</li>
+						<li>Kitchen</li>
+						<li>Iron</li>
+					</ul>
 				</div>
-				<ul class="popover amenities-list">
-					<li>Internet</li>
-					<li>TV</li>
-					<li>Kitchen</li>
-					<li>Iron</li>
-				</ul>
-			</div>
-			<button type="button">Search</button>
-		</section>
-		<section class="places">
-			<h1>Places</h1>
-			<div class="places-container">
-				<article class="place">
-					<div class="place-header">
-						<h2 class="place-name">My Home</h2>
-						<div class="price_by_night">
-							<p>$80</p>
+				<button type="button">Search</button>
+			</section>
+			<section class="places">
+				<h1>Places</h1>
+				<div class="places-container">
+					<article class="place">
+						<div class="place-header">
+							<h2 class="place-name">My Home</h2>
+							<div class="price_by_night">
+								<p>$80</p>
+							</div>
 						</div>
-					</div>
-					<div class="information">
-						<div class="info max_guest">
-							<div class="icon icon-guest"></div>
-							<p>2 Guests</p>
+						<div class="information">
+							<div class="info max_guest">
+								<div class="icon icon-guest"></div>
+								<p>2 Guests</p>
+							</div>
+							<div class="info number_of_rooms">
+								<div class="icon icon-bed"></div>
+								<p>1 Bedroom</p>
+							</div>
+							<div class="info number_of_bathrooms">
+								<div class="icon icon-bath"></div>
+								<p>1 Bathroom</p>
+							</div>
 						</div>
-						<div class="info number_of_rooms">
-							<div class="icon icon-bed"></div>
-							<p>1 Bedroom</p>
+						<div class="description-container">
+							<div class="user">
+								<p><span>Owner</span>: John Doe</p>
+							</div>
+							<div class="description">
+								<p>This is a lovely 1 bedroom and 1 bathroom apartment 
+								that can accomodate two people. It locates at the 
+								center of Shangai and next to the subway line 1, 1
+								stop to People Square, 2 stops to Bund, 3 stops to
+								Goky Park
+								</p>
+							</div>
 						</div>
-						<div class="info number_of_bathrooms">
-							<div class="icon icon-bath"></div>
-							<p>1 Bathroom</p>
+					</article>
+					<article class="place">
+						<div class="place-header">
+							<h2 class="place-name">A suite</h2>
+							<div class="price_by_night">
+								<p>$99</p>
+							</div>
 						</div>
-					</div>
-					<div class="description-container">
-						<div class="user">
-							<p><span>Owner</span>: John Doe</p>
+						<div class="information">
+							<div class="info max_guest">
+								<div class="icon icon-guest"></div>
+								<p>4 Guests</p>
+							</div>
+							<div class="info number_of_rooms">
+								<div class="icon icon-bed"></div>
+								<p>2 Bedroom</p>
+							</div>
+							<div class="info number_of_bathrooms">
+								<div class="icon icon-bath"></div>
+								<p>2 Bathroom</p>
+							</div>
 						</div>
-						<div class="description">
-							<p>This is a lovely 1 bedroom and 1 bathroom apartment 
-							that can accomodate two people. It locates at the 
-							center of Shangai and next to the subway line 1, 1
-							stop to People Square, 2 stops to Bund, 3 stops to
-							Goky Park
-							</p>
+						<div class="description-container">
+							<div class="user">
+								<p><span>Owner</span>: Tom York</p>
+							</div>
+							<div class="description">
+								<p>This is a cozy 2 bedroom and 2 bathroom
+								apartment that can accommodate up to 4 guests.
+								It is conveniently located in the heart of downtown
+								Chicago, just a short walk away from the famous
+								Magnificent Mile. The apartment is equipped with
+								all the modern amenities, including a fully
+								equipped kitchen, comfortable beds, and high-speed
+								internet. With two bathrooms, getting ready in the
+								morning is a breeze, and the spacious living room
+								is perfect for entertaining guests. Whether you're
+								in town for business or pleasure, this apartment is
+								the perfect base for exploring all that Chicago has
+								to offer.
+								</p>
+							</div>
 						</div>
-					</div>
-				</article>
-				<article class="place">
-					<div class="place-header">
-						<h2 class="place-name">A suite</h2>
-						<div class="price_by_night">
-							<p>$99</p>
+					</article>
+					<article class="place">
+						<div class="place-header">
+							<h2 class="place-name">Tiny House<h2>
+									<div class="price_by_night">
+										<p>$65</p>
+									</div>
 						</div>
-					</div>
-					<div class="information">
-						<div class="info max_guest">
-							<div class="icon icon-guest"></div>
-							<p>4 Guests</p>
+						<div class="information">
+							<div class="info max_guest">
+								<div class="icon icon-guest"></div>
+								<p>1 Guests</p>
+							</div>
+							<div class="info number_of_rooms">
+								<div class="icon icon-bed"></div>
+								<p>1 Bedroom</p>
+							</div>
+							<div class="info number_of_bathrooms">
+								<div class="icon icon-bath"></div>
+								<p>1 Bathroom</p>
+							</div>
 						</div>
-						<div class="info number_of_rooms">
-							<div class="icon icon-bed"></div>
-							<p>2 Bedroom</p>
+						<div class="description-container">
+							<div class="user">
+								<p><span>Owner</span>: Matthew Bellamy</p>
+							</div>
+							<div class="description">
+								<p>This charming tiny house is perfect for solo
+								travelers looking for a cozy and comfortable
+								retreat. With one bedroom and one bathroom, this
+								tiny house has everything you need for a relaxing
+								stay. The bedroom features a comfortable twin-sized
+								bed and plenty of storage space for your
+								belongings. The bathroom is fully equipped with a
+								shower, toilet, and sink, and there's even a small
+								kitchenette with a mini-fridge and microwave for
+								preparing snacks and light meals. Despite its small
+								size, this tiny house feels spacious and airy,
+								thanks to the clever use of natural light and smart
+								design. Plus, with its prime location just a short
+								walk from the beach, you'll have plenty of
+								opportunities to soak up the sun and enjoy the
+								outdoors.
+								</p>
+							</div>
 						</div>
-						<div class="info number_of_bathrooms">
-							<div class="icon icon-bath"></div>
-							<p>2 Bathroom</p>
-						</div>
-					</div>
-					<div class="description-container">
-						<div class="user">
-							<p><span>Owner</span>: Tom York</p>
-						</div>
-						<div class="description">
-							<p>This is a cozy 2 bedroom and 2 bathroom
-							apartment that can accommodate up to 4 guests.
-							It is conveniently located in the heart of downtown
-							Chicago, just a short walk away from the famous
-							Magnificent Mile. The apartment is equipped with
-							all the modern amenities, including a fully
-							equipped kitchen, comfortable beds, and high-speed
-							internet. With two bathrooms, getting ready in the
-							morning is a breeze, and the spacious living room
-							is perfect for entertaining guests. Whether you're
-							in town for business or pleasure, this apartment is
-							the perfect base for exploring all that Chicago has
-							to offer.
-							</p>
-						</div>
-					</div>
-				</article>
-				<article class="place">
-					<div class="place-header">
-						<h2 class="place-name">Tiny House<h2>
-						<div class="price_by_night">
-							<p>$65</p>
-						</div>
-					</div>
-					<div class="information">
-						<div class="info max_guest">
-							<div class="icon icon-guest"></div>
-							<p>1 Guests</p>
-						</div>
-						<div class="info number_of_rooms">
-							<div class="icon icon-bed"></div>
-							<p>1 Bedroom</p>
-						</div>
-						<div class="info number_of_bathrooms">
-							<div class="icon icon-bath"></div>
-							<p>1 Bathroom</p>
-						</div>
-					</div>
-					<div class="description-container">
-						<div class="user">
-							<p><span>Owner</span>: Matthew Bellamy</p>
-						</div>
-						<div class="description">
-							<p>This charming tiny house is perfect for solo
-							travelers looking for a cozy and comfortable
-							retreat. With one bedroom and one bathroom, this
-							tiny house has everything you need for a relaxing
-							stay. The bedroom features a comfortable twin-sized
-							bed and plenty of storage space for your
-							belongings. The bathroom is fully equipped with a
-							shower, toilet, and sink, and there's even a small
-							kitchenette with a mini-fridge and microwave for
-							preparing snacks and light meals. Despite its small
-							size, this tiny house feels spacious and airy,
-							thanks to the clever use of natural light and smart
-							design. Plus, with its prime location just a short
-							walk from the beach, you'll have plenty of
-							opportunities to soak up the sun and enjoy the
-							outdoors.
-							</p>
-						</div>
-					</div>
-				</article>
-			</div>
-		</section>
-	</main>
-    <footer>
-      <p>Holberton School</p>
-    </footer>
-  </body>
+					</article>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<p>Holberton School</p>
+		</footer>
+	</body>
 </html>
