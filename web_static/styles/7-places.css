@@ -1,0 +1,29 @@
+.places {
+	margin: 32px 12px;
+}
+
+.places h1 {
+	font-size: 3rem;
+	font-weight: 700;
+}
+
+.places-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.place {
+	width: 390px;
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #FF5A5F;
+	border-radius: 4px;
+	flex-shrink: 0;
+}
+
+.place-name {
+	font-size: 3rem;
+	font-weight: 700;
+	text-align: center;
+}
