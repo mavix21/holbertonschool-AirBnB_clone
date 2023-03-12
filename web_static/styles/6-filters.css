@@ -64,6 +64,7 @@
 	border-radius: 4px;
 	width: 100%;
 	padding-block: 24px;
+	z-index: 10;
 }
 
 .locations-list, .amenities-list {
